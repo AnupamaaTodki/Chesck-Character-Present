@@ -1,5 +1,7 @@
 package com.practiceproject;
 
+import java.io.FileWriter;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Scanner;
 
@@ -18,7 +20,7 @@ public class PracticeProjectt {
 		return list2;
 	}
 
-	public static void print(ArrayList<String> list) {
+	public static void print(ArrayList<String> list) throws IOException {
 		ArrayList<String> containElement = characterIsPresent(list);
 		if (containElement.size() != 0) {
 			System.out.println("Alphabet is present in the string that are");
@@ -28,16 +30,21 @@ public class PracticeProjectt {
 		} else {
 			System.out.println("Alphabet is not present in string");
 		}
+		FileWriter writer = new FileWriter("C:\\Users\\dell\\fileCheck");
+		writer.write(containElement.toString());
+		writer.close();
 	}
 
-	public static void main(String args[]) {
+	public static void main(String args[]) throws IOException {
 		ArrayList<String> list = new ArrayList<>();
 		list.add("Anvesh");
 		list.add("Aryan");
-		list.add("Sandesh");
+		list.add("Savanth");
 		list.add("vikas");
+		list.add("Sanya");
+		list.add("Manvita");
+		list.add("Chandini");
 
 		print(list);
 	}
-
 }
